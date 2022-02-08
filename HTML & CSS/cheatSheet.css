@@ -1,0 +1,39 @@
+
+
+ /*by element*/
+h5 {
+    color: yellow;
+  }
+  /* by class */ 
+  .author-class {
+    color: pink;
+  }
+  /* by id */ 
+  #author-id {
+    color: cornflowerblue;
+  }
+  /* by Descendant 
+  <ul class='main-list'>
+    <li> ... </li>
+  </ul>
+  */ 
+  .main-list li {
+ 
+  }
+  /* by chaining class to element*/
+  
+  h1.special {
+ 
+  }
+  
+  h2 {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    color: rgba(255, 255, 255, 0.5);
+    font-weight: 100;
+    font-size: 22px;
+    line-height: 24px;
+    padding-bottom: 30px;
+    text-align: left;
+    width: 70%;
+    font-family: Georgia;
+  }
