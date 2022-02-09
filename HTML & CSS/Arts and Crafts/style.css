@@ -3,4 +3,43 @@ h1 {
     font-size: 100px;
     font-weight: bold;
     color: khaki;
+    text-align: center;
+    
+}
+h2 {
+    font-family:Helvetica;
+    font-size: 32px;
+    font-weight: bold;
+    color: white;
+    text-align: left;
+}
+p {
+    font-family: Helvetica;
+    font-size: 20px;
+}
+figcaption {
+    font-family: Helvetica;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: left;
+}
+figure {
+    text-align: left;
+    margin: 0;
+}
+img {
+    text-align: left;
+}
+.price {
+    font-weight: bold;
+    color: blue;
+}
+#brushes header{
+    background-color: mediumspringgreen;
+}
+#frames header{
+    background-color: lightcoral;
+}
+#paint header{
+    background-color: skyblue;
 }

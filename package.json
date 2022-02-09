@@ -2,5 +2,8 @@
   "dependencies": {
     "gulp": "^4.0.2",
     "gulp-markdown-it": "^0.1.1"
+  },
+  "devDependencies": {
+    "prettier": "2.5.1"
   }
 }
