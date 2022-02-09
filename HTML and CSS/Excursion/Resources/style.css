@@ -11,8 +11,9 @@ h1 {
     color: white;
 }
 
-p .link {
+.link {
     color: aquamarine;
+    text-decoration: underline;
 }
 
 h2 {
@@ -26,6 +27,7 @@ h3 {
     color: grey;
 }
 
-p .copyrright {
+.copyright {
     color: grey;
+    text-align: right;
 }
