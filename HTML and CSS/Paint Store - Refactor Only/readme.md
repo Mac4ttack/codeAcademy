@@ -1,0 +1,1 @@
+In this project I refactored the provided style.css to improve the design aesthetic. Unfortunately, the pictures used in the resources are unavailable.
