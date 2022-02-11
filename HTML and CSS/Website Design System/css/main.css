@@ -34,7 +34,7 @@ header {
   margin-left: 10%;
 }
 
-div {
+div { 
   min-width: max-content;
   text-align: center;
   margin: .5% .5%;
