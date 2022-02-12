@@ -7,8 +7,11 @@ body {
   font-family: Helvetica, Arial, sans-serif;
   text-align: center;
   opacity: 0.9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-header {
+#top {
   height: 69px;
   width: 100%;
   position: fixed;
@@ -20,11 +23,11 @@ header {
   z-index: 2;
   flex-direction: row;
 }
-header .logo {
+#top .logo {
   height: 50px;
   margin-left: 10px;
 }
-header .nav {
+#top .nav {
   list-style-type: none;
   text-decoration: underline;
   display: inline-flex;
@@ -48,29 +51,80 @@ main {
   display: inline-flex;
   width: 1200px;
   justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
-#missionStatement h2,
-#missionStatement h4 {
+h2,
+h4 {
   line-height: normal;
   line-height: 0px;
   white-space: normal;
 }
 #missionStatement {
-    background-color: black;
-    align-content: center;
-    align-items: center;
-    display:flex;
-    flex-direction: column;
-  }
+  background-color: black;
+  align-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  width: 1200px;
+}
+
 #mission {
-    height: 700px;
-    background: url("Resources/img-mission-background.webp");
-    background-size:cover;
-    margin-bottom: 80px;
+  height: 700px;
+  width: 1200px;
+  background: url("Resources/img-mission-background.webp");
+  background-size: cover;
+  margin-bottom: 80px;
+  align-content: center;
+  align-items: center;
+  display: flex;
+}
+
+#featured {
+  width: 1000px;
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
+}
+
+#featuredHead {
+  align-content: center;
+  align-items: center;
+  display: inline-flex;
+  flex-direction: column;
+}
+.totm {
+  margin: 10px 10px;
+}
+
+.totm img {
+  height: 200px;
+  width: 300px;
+}
+
+#totmContainer {
+  flex-direction: row;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  display: inline-flex;
+}
+
+#locations {
+    height: 500px;
+    width: 1200px;
+    background: url("Resources/img-locations-background.webp");
+    background-size: cover;
     align-content: center;
     align-items: center;
     display: flex;
-    
-  }
-  
+}
+
+#locationsHead{
+
+}
+
+#locContainer{
+
+}
