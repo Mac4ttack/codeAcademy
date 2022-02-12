@@ -1,35 +1,76 @@
-body{
-    padding:0px;
-    margin: 0px;
-    background-color:black;
-    color:seashell;
-    font-size: 22px;
-    font-family: Helvetica, Arial, sans-serif;
-    text-align: center;
-    opacity: 0.9;
+body {
+  padding: 0px;
+  margin: 0px;
+  background-color: black;
+  color: seashell;
+  font-size: 22px;
+  font-family: Helvetica, Arial, sans-serif;
+  text-align: center;
+  opacity: 0.9;
 }
 header {
-    height: 69px;
-    width: 100%;
-    position: fixed;
-    justify-content: space-between;
-    border-bottom:1px solid seashell;
-    display: flex;
-    align-items: center;
-    z-index: 1;
+  height: 69px;
+  width: 100%;
+  position: fixed;
+  justify-content: space-between;
+  background-color: black;
+  border-bottom: 1px solid seashell;
+  display: flex;
+  align-items: center;
+  z-index: 2;
+  flex-direction: row;
 }
-header img {
-    height: 50px;
-    margin-left: 10px;
-    display: flex;
+header .logo {
+  height: 50px;
+  margin-left: 10px;
 }
 header .nav {
-    list-style-type: none;
-    text-decoration: underline;
+  list-style-type: none;
+  text-decoration: underline;
+  display: inline-flex;
+  flex-direction: row;
+}
+.nav a {
+  margin: 0 10px;
+}
+a,
+a:hover,
+a:visited,
+a:focus,
+a:active {
+  text-decoration: none;
+  color: inherit;
+  outline: 0;
+}
+main {
+  top: +69px;
+  position: relative;
+  display: inline-flex;
+  width: 1200px;
+  justify-content: center;
+}
+
+#missionStatement h2,
+#missionStatement h4 {
+  line-height: normal;
+  line-height: 0px;
+  white-space: normal;
+}
+#missionStatement {
+    background-color: black;
+    align-content: center;
+    align-items: center;
+    display:flex;
+    flex-direction: column;
+  }
+#mission {
+    height: 700px;
+    background: url("Resources/img-mission-background.webp");
+    background-size:cover;
+    margin-bottom: 80px;
+    align-content: center;
+    align-items: center;
     display: flex;
-    flex-direction: row;
-    width: max-content;
-}
-.nav li {
-    margin:10px;
-}
+    
+  }
+  
