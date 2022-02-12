@@ -75,7 +75,6 @@ h4 {
   width: 1200px;
   background: url("Resources/img-mission-background.webp");
   background-size: cover;
-  margin-bottom: 80px;
   align-content: center;
   align-items: center;
   display: flex;
@@ -86,6 +85,7 @@ h4 {
   display: flex;
   flex-direction: column;
   z-index: 1;
+  margin: 80px;
 }
 
 #featuredHead {
@@ -112,19 +112,53 @@ h4 {
 }
 
 #locations {
-    height: 500px;
-    width: 1200px;
-    background: url("Resources/img-locations-background.webp");
-    background-size: cover;
-    align-content: center;
-    align-items: center;
+  height: 500px;
+  width: 1200px;
+  background: url("Resources/img-locations-background.webp");
+  background-size: cover;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+#locationsHead {
+  align-items: flex-end;
+  display: flex;
+}
+#locationsHead h2 {
+    align-self: flex-end;
+}
+
+#locContainer {
+  flex-direction: row;
+  display: inline-flex;
+}
+
+.location {
+  min-width: fit-content;
+  display: flex;
+  flex-direction: column;
+  margin: 15px 20px;
+  width: 300px;
+  background-color: black;
+  opacity: 1;
+}
+
+#contact {
+    height: 200px;
+}
+
+#copyright {
+    text-align: left;
+    padding-left: 20px;
     display: flex;
 }
 
-#locationsHead{
-
-}
-
-#locContainer{
-
+footer {
+    top: +69px;
+    position: relative;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
 }
