@@ -1,6 +1,9 @@
 const Calculate = {
   factorial(inputNumber) {
-      return 120;
+      for (let i = inputNumber -1; i>= 1; i--) {
+          inputNumber *= i
+      }
+      return inputNumber;
   }
 }
 
