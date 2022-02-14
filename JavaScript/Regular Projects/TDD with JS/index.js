@@ -11,3 +11,4 @@ const Calculate = {
 };
 
 module.exports = Calculate;
+S
