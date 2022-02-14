@@ -1,8 +1,7 @@
-var assert = require("assert");
-var Calculate =  require('../index.js')
+const Calculate = {
+  
+}
 
-describe('Calculate', () => {
-  describe('.factorial', () => {
+module.exports = Calculate;
 
-  });
-});
+
