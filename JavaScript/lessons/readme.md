@@ -1,0 +1,1 @@
+Everything in the lessons folder was either entirely provided or partially provided and walked through via guided instructions. I have added them as reference material.
