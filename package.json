@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "dotenv": "^16.0.0",
     "gulp": "^4.0.2",
     "gulp-markdown-it": "^0.1.1"
   },
