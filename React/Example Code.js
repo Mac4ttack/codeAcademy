@@ -172,3 +172,354 @@ class MyClass extends React.Component {
       );
     }
   }
+
+//Put an Event Handler in a Component Class
+
+class Talker extends React.Component {
+  talk() {
+    let speech = '';
+    for (let i = 0; i < 10000; i++) {
+      speech += 'blah ';
+    }
+    alert(speech);
+	}
+  
+  render() {
+    return <Button />;
+  }
+}
+
+ReactDOM.render(
+  <Talker />,
+  document.getElementById('app')
+);
+
+//Render Different UI Based on Props
+
+export class Welcome extends React.Component {
+  render() {
+    if (this.props.name === 'Wolfgang Amadeus Mozart') {
+      return (
+      	<h2>
+      	  hello sir it is truly great to meet you here on the web
+      	</h2>
+      );
+    } else {
+      return (
+      	<h2>
+      	  WELCOME "2" MY WEB SITE BABYYY!!!!!
+      	</h2>
+      );
+    }
+  }
+}
+
+//pass props to a component from a component
+import React from 'react';
+
+export class Greeting extends React.Component {
+  render() {
+    return <h1>Hi there, {this.props.name}!</h1>;
+  }
+}
+
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { Greeting } from './Greeting';
+
+class App extends React.Component {
+  render() {
+    return (
+      <div>
+        <h1>
+          Hullo and, "Welcome to The Newzz," "On Line!"
+        </h1>
+        <Greeting name="Ruby" />
+        <article>
+          Latest newzz:  where is my phone?
+        </article>
+      </div>
+    );
+  }
+}
+
+ReactDOM.render(
+  <App />, 
+  document.getElementById('app')
+);
+
+// Remder a Component's props
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+class Greeting extends React.Component {
+  render() {
+    return <h1>Hi there, {this.props.firstName}!</h1>;
+  }
+}
+
+ReactDOM.render(
+  <Greeting firstName='Rybu' />, 
+  document.getElementById('app')
+);
+
+//render props
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+class PropsDisplayer extends React.Component {
+  render() {
+  	const stringProps = JSON.stringify(this.props);
+
+    return (
+      <div>
+        <h1>CHECK OUT MY PROPS OBJECT</h1>
+        <h2>{stringProps}</h2>
+      </div>
+    );
+  }
+}
+
+// ReactDOM.render goes here:
+ReactDOM.render(<PropsDisplayer myProp= "Hello"/>, document.getElementById('app'))
+
+//access props
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+class PropsDisplayer extends React.Component {
+  render() {
+  	const stringProps = JSON.stringify(this.props);
+
+    return (
+      <div>
+        <h1>CHECK OUT MY PROPS OBJECT</h1>
+        <h2>{stringProps}</h2>
+      </div>
+    );
+  }
+}
+
+// ReactDOM.render goes here:
+ReactDOM.render(<PropsDisplayer myProp= "Hello"/>, document.getElementById('app'))
+
+//pass an event handler as a prop - passing talk to button
+
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { Button } from './Button';
+
+class Talker extends React.Component { 
+  //this is the talk handler
+  talk() {
+    let speech = '';
+    for (let i = 0; i < 10000; i++) {
+      speech += 'blah ';
+    }
+    alert(speech);
+  }
+  
+  render() {
+    return <Button talk={this.talk}/>; 
+    //we chose talk as attribute name passing in the talk handler
+  }
+}
+
+ReactDOM.render(
+  <Talker />,
+  document.getElementById('app')
+);
+
+import React from 'react';
+
+export class Button extends React.Component {
+  render() {
+    return (
+      <button onClick= {this.props.talk}>
+        Click me!
+      </button>
+    );
+  }
+}
+
+//refactor Previous example with better naming convention to explain what they do
+/*
+One major source of confusion is the fact that names like onClick have special meaning, but only if they’re used on HTML-like elements.
+*/
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { Button } from './Button';
+
+class Talker extends React.Component {
+  handleClick() {
+    let speech = '';
+    for (let i = 0; i < 10000; i++) {
+      speech += 'blah ';
+    }
+    alert(speech);
+  }
+  
+  render() {
+    return <Button onClick={this.handleClick}/>;
+  }
+}
+
+ReactDOM.render(
+  <Talker />,
+  document.getElementById('app')
+);
+import React from 'react';
+
+export class Button extends React.Component {
+  render() {
+    return (
+      <button onClick= {this.props.onClick}>
+        Click me!
+      </button>
+    );
+  }
+}
+
+
+// props.children returns everything inbetween opening and closing tags - they don't have to be self closing
+// If a component has more than one child between its JSX tags, then this.props.children will return those children in an array. 
+// However, if a component has only one child, then this.props.children will return the single child, not wrapped in an array.
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { List } from './List';
+
+class App extends React.Component {
+  render() {
+    return (
+      <div>
+        <List type='Living Musician'>
+          <li>Sachiko M</li>
+          <li>Harvey Sid Fisher</li>
+        </List>
+        <List type='Living Cat Musician'>
+          <li>Nora the Piano Cat</li>
+        </List>
+      </div>
+    );
+  }
+}
+
+ReactDOM.render(
+  <App />, 
+  document.getElementById('app')
+);
+
+import React from 'react';
+
+export class List extends React.Component {
+  render() {
+    let titleText = `Favorite ${this.props.type}`;
+    if (this.props.children instanceof Array) {
+    	titleText += 's';
+    }
+    return (
+      <div>
+        <h1>{titleText}</h1>
+        <ul>{this.props.children}</ul>
+      </div>
+    );
+  }
+}
+
+//define default props
+
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+class Button extends React.Component {
+  render() {
+    return (
+      <button>
+        {this.props.text}
+      </button>
+    );
+  }
+}
+
+// defaultProps goes here:
+Button.defaultProps = { text: 'I am a button' }; 
+
+ReactDOM.render(
+  <Button />, 
+  document.getElementById('app')
+);
+
+
+
+//  STATE 
+
+//setting initial state
+
+class Example extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { mood: 'decent' };
+  }
+ 
+  render() {
+    return <div></div>;
+  }
+}
+ 
+<Example />
+
+
+//Accessing State
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+class App extends React.Component {
+	// constructor method begins here:
+  constructor(props) {
+    super(props);
+    this.state = { title: 'Best App' };
+  }
+	
+  render() {
+    return (
+      <h1>
+        {this.state.title}
+      </h1>
+    );
+  }
+}
+
+ReactDOM.render(<App />, document.getElementById('app'));
+
+// calling this.setState from another Function
+
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+const green = '#39D1B4';
+const yellow = '#FFD712';
+
+class Toggle extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {color: green}
+    this.changeColor = this.changeColor.bind(this);
+  }
+  changeColor () {
+    const newColor =  this.state.color == yellow ? green : yellow ;
+    this.setState({color: newColor});
+  }
+  render() {
+    return (
+      <div style={{background: this.state.color}}>
+        <h1>
+          Change my color
+        </h1>
+        <button onClick = {this.changeColor}>
+        Change color
+        </button>
+      </div>
+    );
+  }
+}
+ReactDOM.render(<Toggle />, document.getElementById('app'))
