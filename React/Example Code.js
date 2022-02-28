@@ -523,3 +523,232 @@ class Toggle extends React.Component {
   }
 }
 ReactDOM.render(<Toggle />, document.getElementById('app'))
+
+
+//Stateless components from stateful components
+import React from 'react';
+import ReactDOM from 'react-dom';
+import {Child} from './Child'
+
+class Parent extends React.Component {
+constructor(props){
+  super(props);
+  this.state = {name: 'Frarthur'};
+}
+render() {
+  return <Child name= {this.state.name} />;
+}
+ReactDOM.render(<Parent />,document.getElementById('app'))
+}
+/////////
+import React from 'react';
+
+
+export class Child extends React.Component{
+  render() {
+    return <h1>Hey, my name is {this.props.name}!</h1>;
+  }
+}
+
+//// child component updates their parent's state
+//parent
+
+
+
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { ChildClass } from './ChildClass';
+
+class ParentClass extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = { totalClicks: 0 };
+
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick() {
+    const total = this.state.totalClicks;
+
+    // calling handleClick will 
+    // result in a state change:
+    this.setState(
+      { totalClicks: total + 1 }
+    );
+  }
+
+  // The stateful component class passes down
+  // handleClick to a stateless component class:
+  render() {
+    return (
+      <ChildClass onClick={this.handleClick} />
+    );
+  }
+}
+///////
+//child 
+
+
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+export class ChildClass extends React.Component {
+  render() {
+    return (
+      // The stateless component class uses
+      // the passed-down handleClick function,
+      // accessed here as this.props.onClick,
+      // as an event handler:
+      <button onClick={this.props.onClick}>
+        Click Me!
+      </button>
+    );
+  }
+}
+
+
+//another example child updates parent 
+
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { Child } from './Child';
+
+class Parent extends React.Component {
+  constructor(props) {
+    super(props);
+    this.changeName = this.changeName.bind(this);
+    this.state = { name: 'Frarthur' };
+  }
+changeName(newName) {
+  this.setState({
+    name: newName
+  });
+}
+  render() {
+    return <Child name={this.state.name} onChange={this.changeName}/>
+  }
+}
+
+ReactDOM.render(
+	<Parent />,
+	document.getElementById('app')
+);
+
+
+/// Parent
+
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { Child } from './Child';
+
+class Parent extends React.Component {
+  constructor(props) {
+    super(props);
+    this.changeName = this.changeName.bind(this);
+    this.state = { name: 'Frarthur' };
+  }
+changeName(newName) {
+  this.setState({
+    name: newName
+  });
+}
+  render() {
+    return <Child name={this.state.name} onChange={this.changeName}/>
+  }
+}
+
+ReactDOM.render(
+	<Parent />,
+	document.getElementById('app')
+);
+
+
+
+/*
+In lesson 1, you learned your first React programming pattern: a stateful, parent component passes down a prop to a stateless, child component.
+
+In lesson 2, you learned that lesson 1’s pattern is actually part of a larger pattern: a stateful, parent component passes down an event handler to a stateless, child component. The child component then uses that event handler to update its parent’s state.
+
+In this lesson, we will expand the pattern one last time. A child component updates its parent’s state, and the parent passes that state to a sibling component.
+
+An understanding of this final pattern will be very helpful in the wild, not to mention in the next React course. Click Next and we’ll build an example!
+*/
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { Child } from './Child';
+import { Sibling } from './Sibling';
+
+class Parent extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = { name: 'Frarthur' };
+
+    this.changeName = this.changeName.bind(this);
+  }
+
+  changeName(newName) {
+    this.setState({
+      name: newName
+    });
+  }
+
+  render() {
+    return (
+      <div>
+        <Child onChange={this.changeName} />
+        <Sibling name={this.state.name} />
+      </div>
+    );
+  }
+}
+
+ReactDOM.render(
+  <Parent />,
+  document.getElementById('app')
+);
+import React from 'react';
+
+export class Sibling extends React.Component {
+  render() {
+		const name = this.props.name;
+    return (
+      <div>
+        <h1>Hey, my name is {name}!</h1>
+        <h2>Don't you think {name} is the prettiest name ever?</h2>
+        <h2>Sure am glad that my parents picked {name}!</h2>
+      </div>
+    );
+  }
+}
+
+import React from 'react';
+
+export class Child extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+  handleChange(e) {
+    const name = e.target.value;
+    this.props.onChange(name);
+  }
+
+  render() {
+    return (
+      <div>
+        <select
+          id="great-names"
+          onChange={this.handleChange}>
+
+          <option value="Frarthur">Frarthur</option>
+          <option value="Gromulus">Gromulus</option>
+          <option value="Thinkpiece">Thinkpiece</option>
+        </select>
+      </div>
+    );
+  }
+}
