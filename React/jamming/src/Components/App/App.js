@@ -29,6 +29,7 @@ class App extends Component {
     this.setState({
       playlistTracks: tracks,
     });
+  
   }
 
   removeTrack(track) {
