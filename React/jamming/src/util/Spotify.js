@@ -1,4 +1,6 @@
-const clientId = "3e44d80cad7d4ee597ef5229c6ed3998";
+require('dotenv').config()
+
+const clientId = process.env.REACT_APP_SPOTIFY;
 const redirectUri = "https://macjammin.surge.sh/";
 let accessToken;
 
