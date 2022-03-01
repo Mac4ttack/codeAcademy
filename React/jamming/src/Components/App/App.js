@@ -66,7 +66,9 @@ class App extends Component {
       });
     });
   }
-
+  componentDidMount() {
+    window.addEventListener('load', () => {Spotify.getAccessToken()});
+  }
   render() {
     return (
       <div className="data-reactroot">
