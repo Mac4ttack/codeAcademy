@@ -2,7 +2,8 @@
   "dependencies": {
     "dotenv": "^16.0.0",
     "gulp": "^4.0.2",
-    "gulp-markdown-it": "^0.1.1"
+    "gulp-markdown-it": "^0.1.1",
+    "react-router-dom": "^5.2.0"
   },
   "devDependencies": {
     "mocha": "^9.2.0",
