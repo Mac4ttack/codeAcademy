@@ -538,8 +538,11 @@ constructor(props){
 render() {
   return <Child name= {this.state.name} />;
 }
+
 ReactDOM.render(<Parent />,document.getElementById('app'))
 }
+
+
 /////////
 import React from 'react';
 
