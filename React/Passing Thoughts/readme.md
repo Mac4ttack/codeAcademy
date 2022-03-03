@@ -4,4 +4,9 @@ What if you could post something and know it wouldn’t live forever? In this pr
 
 Let’s get started!
 
-Guided instructions and starting resources provided
+Guided instructions and starting resources provided.
+Added code to solve the following:
+
+If you try to add a new thought, it refreshes the whole page and doesn’t do anything.
+If you try to delete a thought manually, it crashes!
+Thoughts never disappear, defeating the whole point of the app.
