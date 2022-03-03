@@ -1,5 +1,6 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import {styles} from '../styles'
+
 
 const images = {
   copycat: 'https://content.codecademy.com/courses/React/react_photo_copycat.png',
@@ -7,37 +8,22 @@ const images = {
 };
 
 
-class CopyCat extends React.Component {
-    constructor(props) {
-    super(props);
-
-    this.state = { 
-      copying: true
-    };
-
-    this.toggleTape = this.toggleTape.bind(this);
-  }
-
-  toggleTape() {
-    this.setState({copying: !this.state.copying})
-  }
-  
+export class CopyCat extends React.Component {
   render() {
-    const copying = this.state.copying;
-    const toggleTape = this.toggleTape
-    
+    const {copying, toggleTape, value, handleChange} = this.props;
+
     return (
-      <div>
-        <h1>Copy Cat</h1>
-        <img 
+      <div style={styles.divStyles}>
+        <h1 style={{marginBottom:80}}>Copy Cat</h1>
+        <input type='text' value={value} onChange={handleChange}/>
+        <img
+          style={styles.imgStyles} 
           alt='cat'
           src={copying ? images.copycat : images.quietcat}
           onClick={toggleTape}
         />
+        <p>{copying && value}</p>
       </div>
     );
   };
 }
-
-
-ReactDOM.render(<CopyCat />, document.getElementById('app'));
