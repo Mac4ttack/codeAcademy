@@ -1,8 +1,9 @@
 {
   "dependencies": {
+    "chokidar": "^3.5.3",
     "dotenv": "^16.0.0",
-    "gulp": "^4.0.2",
-    "gulp-markdown-it": "^0.1.1",
+    "glob-parent": "^6.0.2",
+    "lodash": "^4.17.21",
     "react-router-dom": "^5.2.0",
     "redux": "^4.1.2"
   },
