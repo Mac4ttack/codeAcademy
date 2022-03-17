@@ -17,6 +17,7 @@ export default function Category () {
         { 
           categories[name].map(articleSlug => {
             return (
+              // file deepcode ignore ReactMissingArrayKeys: <just learning example>
               <li>
                 <Link to={`/articles/${articleSlug}`}>
                   {articles[articleSlug].title}
