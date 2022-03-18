@@ -106,3 +106,4 @@ src/
         |-- featureASlice.js
     |-- featureB/
         |-- featureBSlice.js
+        */
