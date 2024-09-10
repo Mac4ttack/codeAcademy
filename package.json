@@ -7,7 +7,7 @@
     "glob-parent": "^6.0.2",
     "lodash": "^4.17.21",
     "react-redux": "^7.2.6",
-    "react-router-dom": "^5.2.0",
+    "react-router-dom": "^6.0.0",
     "redux": "^4.1.2"
   },
   "devDependencies": {
