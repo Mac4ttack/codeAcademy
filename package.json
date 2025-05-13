@@ -1,14 +1,14 @@
 {
   "dependencies": {
-    "@reduxjs/toolkit": "^1.8.0",
+    "@reduxjs/toolkit": "^2.0.0",
     "browserify": "^17.0.0",
     "chokidar": "^3.5.3",
     "dotenv": "^16.0.0",
     "glob-parent": "^6.0.2",
     "lodash": "^4.17.21",
-    "react-redux": "^7.2.6",
-    "react-router-dom": "^5.2.0",
-    "redux": "^4.1.2"
+    "react-redux": "^9.0.0",
+    "react-router-dom": "^6.4.0",
+    "redux": "^5.0.0"
   },
   "devDependencies": {
     "@redux-devtools/core": "^3.11.0",
